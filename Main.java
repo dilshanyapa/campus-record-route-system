@@ -9,8 +9,8 @@ public class Main {
         StudentLinkedList studentList = new StudentLinkedList();
 
         // Member 2 (Chanuki Waththuhewa):
-        // ActionStack historyStack = new ActionStack();
-        // RequestQueue requestQueue = new RequestQueue();
+        ActionStack historyStack = new ActionStack();
+        RequestQueue requestQueue = new RequestQueue();
 
         // Member 3 (Sadhanee Devindi):
         // StudentBST studentBST = new StudentBST();
@@ -180,25 +180,32 @@ public class Main {
                     // Add Service Request to Queue
                     System.out.println("[Notice] Service Request Queue functionality (Assigned to Member 2).");
                     // Member 2 code hook:
-                    // System.out.print("Enter Student ID: ");
-                    // String reqStudentId = scanner.nextLine().trim();
-                    // System.out.print("Enter Service Description: ");
-                    // String desc = scanner.nextLine().trim();
-                    // requestQueue.enqueue(new ServiceRequest(reqStudentId, desc));
+                    System.out.print("Enter Student ID: ");
+                    String reqStudentId = scanner.nextLine().trim();
+                    System.out.print("Enter Service Description: ");
+                    String desc = scanner.nextLine().trim();
+                    requestQueue.enqueue(new ServiceRequest(reqStudentId, desc));
                     break;
 
-                case 6:
+               case 6:
                     // Process Next Service Request
-                    System.out.println("[Notice] Process Next Request functionality (Assigned to Member 2).");
-                    // Member 2 code hook:
-                    // requestQueue.dequeue();
+                    System.out.println("\n--- Process Next Service Request ---");
+                    if (requestQueue.isEmpty()) {
+                        System.out.println("[Notice] Queue is empty. No service requests to process.");
+                    } else {
+                        ServiceRequest processed = requestQueue.dequeue();
+                        if (processed != null) {
+                            historyStack.push("Processed service request for: " + processed.getStudentID());
+                            System.out.println("[Success] Processed request: " + processed);
+                        }
+                    }
                     break;
 
                 case 7:
                     // Display Recent Actions using Stack
                     System.out.println("[Notice] Recent Actions Stack functionality (Assigned to Member 2).");
                     // Member 2 code hook:
-                    // historyStack.displayHistory();
+                    historyStack.displayHistory();
                     break;
 
                 // MEMBER 3 PLACEHOLDERS: CASES 8 - 9 (Tree & Hashing)
