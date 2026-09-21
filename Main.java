@@ -13,8 +13,8 @@ public class Main {
         RequestQueue requestQueue = new RequestQueue();
 
         // Member 3 (Sadhanee Devindi):
-        // StudentBST studentBST = new StudentBST();
-        // StudentHashTable studentHashTable = new StudentHashTable();
+        StudentBST studentBST = new StudentBST();
+        StudentHashTable studentHashTable = new StudentHashTable();
 
         // Member 4 (Dushan Maleesha):
         // CampusGraph campusGraph = new CampusGraph();
@@ -100,8 +100,8 @@ public class Main {
 
                     // --- Integration Hooks for Members 2 & 3 ---
                     // historyStack.push("Added student record: " + id);
-                    // studentBST.insert(newStudent);
-                    // studentHashTable.put(id, newStudent);
+                    studentBST.insert(newStudent);
+                    studentHashTable.put(id, newStudent);
 
                     System.out.println("[Success] Student record added successfully.");
                     break;
@@ -212,18 +212,23 @@ public class Main {
 
                 case 8:
                     // Display Students using BST/AVL
-                    System.out.println("[Notice] BST/AVL Display functionality (Assigned to Member 3).");
-                    // Member 3 code hook:
-                    // studentBST.inOrderTraversal();
+                    studentBST.inOrderTraversal();
                     break;
 
                 case 9:
                     // Search Student using Hashing
-                    System.out.println("[Notice] Hash Search functionality (Assigned to Member 3).");
-                    // Member 3 code hook:
-                    // System.out.print("Enter Student ID to search: ");
-                    // String searchKey = scanner.nextLine().trim();
-                    // Student res = studentHashTable.get(searchKey);
+                    System.out.print("Enter Student ID to search: ");
+                    String searchKey = scanner.nextLine().trim();
+                    if (searchKey.isEmpty()) {
+                        System.out.println("[Error] Student ID cannot be empty.");
+                        break;
+                    }
+                    Student res = studentHashTable.get(searchKey);
+                    if (res != null) {
+                        System.out.println("[Found] " + res);
+                    } else {
+                        System.out.println("[Error] Student ID '" + searchKey + "' not found.");
+                    }
                     break;
 
                 // MEMBER 4 PLACEHOLDERS: CASES 10 - 15 (Graph & Traversals)
