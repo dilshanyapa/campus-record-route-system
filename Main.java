@@ -16,8 +16,8 @@ public class Main {
         // StudentBST studentBST = new StudentBST();
         // StudentHashTable studentHashTable = new StudentHashTable();
 
-        // Member 4 (Dushan Maleesha):
-        // CampusGraph campusGraph = new CampusGraph();
+        // Member 4 (Maleesha Dushan):
+         CampusGraph campusGraph = new CampusGraph();
 
         boolean running = true;
 
@@ -222,53 +222,114 @@ public class Main {
                 // MEMBER 4 PLACEHOLDERS: CASES 10 - 15 (Graph & Traversals)
 
                 case 10:
+
                     // Add Campus Location
-                    System.out.println("[Notice] Add Campus Location functionality (Assigned to Member 4).");
-                    // Member 4 code hook:
-                    // System.out.print("Enter Location Name: ");
-                    // String loc = scanner.nextLine().trim();
-                    // campusGraph.addLocation(loc);
+
+                    System.out.println("\n--- Add Campus Location ---");
+
+                    System.out.print("Enter Location Name: ");
+
+                    String loc = scanner.nextLine().trim();
+
+                    campusGraph.addLocation(loc);
+
                     break;
+
+
 
                 case 11:
+
                     // Remove Campus Location
-                    System.out.println("[Notice] Remove Campus Location functionality (Assigned to Member 4).");
-                    // Member 4 code hook:
-                    // System.out.print("Enter Location Name to remove: ");
-                    // campusGraph.removeLocation(scanner.nextLine().trim());
+
+                    System.out.println("\n--- Remove Campus Location ---");
+
+                    System.out.print("Enter Location Name to remove: ");
+
+                    String locToRemove = scanner.nextLine().trim();
+
+                    campusGraph.removeLocation(locToRemove);
+
                     break;
+
+
 
                 case 12:
+
                     // Add Campus Connection/Road
-                    System.out.println("[Notice] Add Campus Road functionality (Assigned to Member 4).");
-                    // Member 4 code hook:
-                    // System.out.print("Enter Source Location: ");
-                    // String src = scanner.nextLine().trim();
-                    // System.out.print("Enter Destination Location: ");
-                    // String dest = scanner.nextLine().trim();
-                    // campusGraph.addConnection(src, dest);
+
+                    System.out.println("\n--- Add Campus Connection/Road ---");
+
+                    System.out.print("Enter Source Location: ");
+
+                    String src = scanner.nextLine().trim();
+
+                    System.out.print("Enter Destination Location: ");
+
+                    String dest = scanner.nextLine().trim();
+
+                    campusGraph.addConnection(src, dest);
+
                     break;
+
+
 
                 case 13:
+
                     // Remove Campus Connection/Road
-                    System.out.println("[Notice] Remove Campus Road functionality (Assigned to Member 4).");
-                    // Member 4 code hook:
-                    // campusGraph.removeConnection(src, dest);
+
+                    System.out.println("\n--- Remove Campus Connection/Road ---");
+
+                    System.out.print("Enter Source Location: ");
+
+                    String removeSrc = scanner.nextLine().trim();
+
+                    System.out.print("Enter Destination Location: ");
+
+                    String removeDest = scanner.nextLine().trim();
+
+                    campusGraph.removeConnection(removeSrc, removeDest);
+
                     break;
+
+
 
                 case 14:
+
                     // Display Campus Connections
-                    System.out.println("[Notice] Display Campus Network functionality (Assigned to Member 4).");
-                    // Member 4 code hook:
-                    // campusGraph.displayNetwork();
+
+                    campusGraph.displayConnections();
+
                     break;
 
+
+
                 case 15:
+
                     // Traverse Campus Locations (BFS or DFS)
-                    System.out.println("[Notice] Campus Graph Traversal functionality (Assigned to Member 4).");
-                    // Member 4 code hook:
-                    // campusGraph.traverseBFS("Library");
+
+                    System.out.println("\n--- Campus Traversal ---");
+
+                    System.out.print("Choose traversal type (BFS/DFS): ");
+
+                    String travType = scanner.nextLine().trim();
+
+                    System.out.print("Enter Starting Location: ");
+
+                    String startLoc = scanner.nextLine().trim();
+
+                    if (travType.equalsIgnoreCase("DFS")) {
+
+                        campusGraph.traverseDFS(startLoc);
+
+                    } else {
+
+                        campusGraph.traverseBFS(startLoc);
+
+                    }
+
                     break;
+
+
 
                 case 16:
                     System.out.println("Exiting system. Goodbye!");
