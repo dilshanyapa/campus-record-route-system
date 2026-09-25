@@ -4,20 +4,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // MEMBER 1 (Y.M.C.D.Yapa): PRIMARY DATA STRUCTURE
-
+        // MEMBER 1 (23DA2-0236) - Student Record Management:
         StudentLinkedList studentList = new StudentLinkedList();
 
-        // Member 2 (Chanuki Waththuhewa):
+        // Member 2 (23DA2-0238) - Service Request Management:
         ActionStack historyStack = new ActionStack();
         RequestQueue requestQueue = new RequestQueue();
 
-        // Member 3 (Sadhanee Devindi):
+        // Member 3 (23DA2-0041) - Student Data Retrieval:
         StudentBST studentBST = new StudentBST();
         StudentHashTable studentHashTable = new StudentHashTable();
 
-        // Member 4 (Maleesha Dushan):
-         CampusGraph campusGraph = new CampusGraph();
+        // Member 4 (23DA2-0101) - Campus Navigation:
+        CampusGraph campusGraph = new CampusGraph();
 
         boolean running = true;
 
@@ -98,8 +97,8 @@ public class Main {
                     Student newStudent = new Student(id, name, programme, marks);
                     studentList.addStudent(newStudent);
 
-                    // --- Integration Hooks for Members 2 & 3 ---
-                    // historyStack.push("Added student record: " + id);
+
+                    // historyStack.push
                     studentBST.insert(newStudent);
                     studentHashTable.put(id, newStudent);
 
@@ -145,8 +144,7 @@ public class Main {
 
                     boolean updated = studentList.updateStudent(updateId, newName, newProg, newMarks);
                     if (updated) {
-                        // --- Integration Hook for Member 2 ---
-                        // historyStack.push("Updated student record: " + updateId);
+                        // historyStack.push
                         System.out.println("[Success] Student record updated successfully.");
                     } else {
                         System.out.println("[Error] Could not update record.");
@@ -161,8 +159,8 @@ public class Main {
 
                     boolean deleted = studentList.deleteStudent(deleteId);
                     if (deleted) {
-                        // --- Integration Hook for Member 2 ---
-                        // historyStack.push("Deleted student record: " + deleteId);
+
+                        // historyStack.push
                         System.out.println("[Success] Student record deleted successfully.");
                     } else {
                         System.out.println("[Error] Student ID '" + deleteId + "' not found.");
@@ -177,8 +175,6 @@ public class Main {
                 // MEMBER 2 PLACEHOLDERS: CASES 5 - 7 (Stack & Queue)
 
                 case 5:
-                    // Add Service Request to Queue
-                    System.out.println("[Notice] Service Request Queue functionality (Assigned to Member 2).");
                     // Member 2 code hook:
                     System.out.print("Enter Student ID: ");
                     String reqStudentId = scanner.nextLine().trim();

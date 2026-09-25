@@ -1,4 +1,3 @@
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedHashMap;
@@ -133,7 +132,7 @@ public class CampusGraph {
             return;
         }
         Set<String> visited = new LinkedHashSet<>();
-        Deque<String> stack = new ArrayDeque<>();
+        Deque<String> stack = new LinkedList<>();
         stack.push(start);
  
         System.out.print("\n--- DFS Traversal from '" + start + "' ---\n");

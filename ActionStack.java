@@ -64,7 +64,9 @@ public class ActionStack {
         StackNode current = top;
         int index = 1;
         while (current != null) {
-            System.out.println(index + ". " + current.action);
+            StringBuilder line = new StringBuilder();
+            line.append(index).append(". ").append(current.action);
+            System.out.println(line.toString());
             current = current.next;
             index++;
         }
